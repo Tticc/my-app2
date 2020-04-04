@@ -1,7 +1,7 @@
 import React from 'react';
 
 // 如果需要导出的class，加上 export
-export class ShoppingList extends React.Component{
+export class Index extends React.Component{
     render(){
         return (<div className="shopping-list">
             <h1>Shopping list for {this.props.name}</h1>
@@ -13,4 +13,4 @@ export class ShoppingList extends React.Component{
         </div>);
     }
 }
-export default ShoppingList;
+export default Index;

@@ -1,9 +1,8 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import './index.css';
 
 class Square extends React.Component{
     render(){
-        console.log("this.props.onClick",this.props.onClick);
         return(<button className="square"
                        onClick={() => this.props.onClick()}>
             {this.props.value}
@@ -39,10 +38,7 @@ function calculateWinner(squares){
 }
 
 class Board extends React.Component {
-
-
     renderSquare(i) {
-        console.log("this.props.onClick in Board",this.props.onClick);
         return (
             <Square
                 value={this.props.squares[i]}
@@ -50,7 +46,6 @@ class Board extends React.Component {
             />
         );
     }
-
     render() {
         return (
             <div>
@@ -74,7 +69,7 @@ class Board extends React.Component {
     }
 }
 
-export class Game extends React.Component {
+export class Index extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -112,12 +107,10 @@ export class Game extends React.Component {
         const history = this.state.history;
         const current = history[history.length-1];
         const winner = calculateWinner(current.squares);
-
         const moves = history.map((step,index) => {
             const desc = index ? "Go to move #"+index : "Go to game start.";
             return (<li key={index}><button onClick={() => this.jumpTo(index)}>{desc}</button></li>);
         });
-
         let status;
         if(winner){
             status = "Winner:"+winner;
@@ -125,7 +118,8 @@ export class Game extends React.Component {
             status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
         }
         return (
-            <fragment>
+            <Fragment>
+                <h1>Game</h1>
                 <div className="game">
                     <div className="game-board">
                         <Board squares={current.squares}
@@ -136,10 +130,8 @@ export class Game extends React.Component {
                         <ol>{moves}</ol>
                     </div>
                 </div>
-
-            </fragment>
-
+            </Fragment>
         );
     }
 }
-export default Game;
+export default Index;

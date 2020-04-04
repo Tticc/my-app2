@@ -1,22 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import Game from "../../components/Game/Game"
-// const Game = React.lazy(() => import("./components/Game/Game"));
+import React,{Fragment} from 'react';
+import GameModel from "../../components/Game"
 
+export class Game extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {"aa":false}
+    }
+    render() {
+        return (
+            <Fragment>
+                <GameModel/>
+            </Fragment>
 
-
+        );
+    }
+}
+export default Game;
 
 
   
   // ========================================
 
-  ReactDOM.render(
-      <fragment>
-          <fragment>
-              <Game />
-          </fragment>
-      </fragment>,
-    document.getElementById('root')
-  );
+  // ReactDOM.render(
+  //     <fragment>
+  //         <fragment>
+  //             <Index />
+  //         </fragment>
+  //     </fragment>,
+  //   document.getElementById('root')
+  // );
   
