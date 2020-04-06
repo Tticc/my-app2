@@ -1,3 +1,20 @@
+
+## FAQs
+1.return <WrappedComponent data={this.state.data} {...this.props} />;
+后面的{...this.props}是指将整个从父组件中传入的props传入子组件吗？是   
+传递部分props的方法：  
+const { kind, ...other } = props;  
+return <button className={className} {...other} />;  
+
+2.动态变量名
+var obj = {};
+for(var i=0; i<5;i++){
+    obj['var'+i] = i;
+}
+console.log(obj);
+
+
+## original
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
