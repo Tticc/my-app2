@@ -30,6 +30,7 @@ class App extends Component{
                             </Link>
                         </SidebarItem>
                     </Sidebar>
+                    <React.StrictMode>
                     <Main>
                         <Switch>{/*如果不加Switch，可能会同时匹配多条，显示多个component*/}
                             <Route path="/app/game" component={Game}/>
@@ -39,6 +40,7 @@ class App extends Component{
                             <Route path={"/app/:id"} component={ShowId}/>
                         </Switch>
                     </Main>
+                    </React.StrictMode>
                 </Root>
             </Router>
         );

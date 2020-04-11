@@ -9,7 +9,7 @@ export class ShoppingList extends React.Component{
     render() {
         return (
             <Fragment>
-                <ShoppingListModel name = "wenccccc"/>
+                <ShoppingListModel name = "wenccccc" color={"custom props color"} />
             </Fragment>
 
         );
