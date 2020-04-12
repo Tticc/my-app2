@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Game from "./app/Game"
 import ShoppingList from "./app/ShoppingList"
+import Hook from "./app/Hook"
 // const Index = React.lazy(() => import("./components/Index/Index"));
 
 
@@ -14,17 +15,22 @@ class App extends Component{
             <Router>
                 <Root>
                     <Sidebar>
-                        <SidebarItem key="123456">
+                        <SidebarItem key="/app/game">
                             <Link to={'/app/game'}>
                                 game
                             </Link>
                         </SidebarItem>
-                        <SidebarItem key="123457">
+                        <SidebarItem key="/app/shop">
                             <Link to={'/app/shop'}>
                                 shopping list
                             </Link>
                         </SidebarItem>
-                        <SidebarItem key="123458">
+                        <SidebarItem key="/app/hook">
+                            <Link to={'/app/hook'}>
+                                hook
+                            </Link>
+                        </SidebarItem>
+                        <SidebarItem key="/app/id">
                             <Link to={`/app/${id}`}>
                                 show id
                             </Link>
@@ -35,7 +41,7 @@ class App extends Component{
                         <Switch>{/*如果不加Switch，可能会同时匹配多条，显示多个component*/}
                             <Route path="/app/game" component={Game}/>
                             <Route path="/app/shop" component={ShoppingList}/>
-
+                            <Route path="/app/hook" component={Hook}/>
                             {/*最通用的匹配放到最后*/}
                             <Route path={"/app/:id"} component={ShowId}/>
                         </Switch>
